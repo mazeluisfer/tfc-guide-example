@@ -1,0 +1,15 @@
+name: Run on Tag
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Print tag
+        run: echo "Tag ${{ github.ref }} was pushed"
